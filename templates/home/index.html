@@ -80,7 +80,10 @@
         <div class="span4">
         <div class="action-box">
           <div class="action-box-inner collaborate clearfix">
-          <h1>From DataStory</h1>
+          <h1>Latest Datasets</h1>
+          <py:for each="i, package_dict in enumerate(c.recently_changed_packages_activity_stream[:10])">
+          <p><a href="${h.url_for(controller='package', action='read', id=package_dict['data']['package']['name'])} ">${package_dict['data']['package']['title']}</a></p>
+          </py:for> 
           </div>
         </div>
         </div>
